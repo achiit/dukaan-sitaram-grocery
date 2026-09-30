@@ -1,0 +1,773 @@
+Bilkul. Yeh Sitaram Grocery website ka complete HTML code hai. Isse index.html naam se save karke browser mein open kar sakte ho.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sitaram Grocery | Nagaspur Medical Bazar</title>
+
+  <style>
+    :root {
+      --blue: #073b9b;
+      --red: #e51d2a;
+      --yellow: #ffd51c;
+      --green: #2e9d45;
+      --dark: #12213a;
+      --light: #f7fafc;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--dark);
+      background: var(--light);
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, #063b9d, #0759cf);
+      color: white;
+      padding: 18px 6%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 900;
+    }
+
+    .logo span {
+      color: var(--yellow);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--yellow);
+    }
+
+    /* HERO */
+    .hero {
+      padding: 75px 6%;
+      background: linear-gradient(135deg, #eaf4ff, #fff7d7);
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--red);
+      color: white;
+      padding: 8px 15px;
+      border-radius: 30px;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 76px);
+      margin: 15px 0 8px;
+      color: var(--blue);
+      line-height: 1;
+    }
+
+    .hero p {
+      font-size: 20px;
+      line-height: 1.7;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    .primary {
+      background: var(--red);
+      color: white;
+    }
+
+    .secondary {
+      background: white;
+      color: var(--blue);
+      border: 2px solid var(--blue);
+    }
+
+    .hero-card {
+      background: white;
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 12px 35px rgba(22, 59, 123, 0.15);
+    }
+
+    .hero-card h2 {
+      color: var(--blue);
+      margin-bottom: 15px;
+    }
+
+    .hours {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 65px 6%;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 36px;
+      color: var(--blue);
+      margin-bottom: 35px;
+    }
+
+    /* PRODUCTS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 18px;
+      box-shadow: 0 6px 22px rgba(22, 59, 123, 0.08);
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(22, 59, 123, 0.15);
+    }
+
+    .icon {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+
+    /* ABOUT */
+    .about {
+      background: white;
+    }
+
+    .contact-box {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    /* CONTACT */
+    .contact {
+      background: var(--blue);
+      color: white;
+    }
+
+    .contact h2 {
+      color: white;
+    }
+
+    .contact a {
+      color: white;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #062d76;
+      color: white;
+      text-align: center;
+      padding: 22px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 50px;
+      }
+
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      nav {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+
+      section {
+        padding: 48px 5%;
+      }
+
+      h1 {
+        font-size: 48px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+
+    <div class="nav">
+
+      <div class="logo">
+        SITARAM <span>GROCERY</span>
+      </div>
+
+      <nav>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+
+    <div>
+
+      <span class="badge">
+        Fresh Quality • Best Price Always
+      </span>
+
+      <h1>
+        Sitaram Grocery
+      </h1>
+
+      <p>
+        Your Daily Needs, Our Priority — everyday grocery
+        essentials for homes in Nagaspur Medical Bazar.
+      </p>
+
+      <div class="buttons">
+
+        <a
+          class="btn primary"
+          href="tel:7894881810">
+          📞 Call Now
+        </a>
+
+        <a
+          class="btn secondary"
+          href="https://wa.me/917894881810">
+          💬 WhatsApp
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- STORE INFO -->
+    <div class="hero-card">
+
+      <h2>
+        Visit Us
+      </h2>
+
+      <p>
+        <strong>📍 Location</strong>
+        <br>
+        Nagaspur Medical Bazar
+      </p>
+
+      <br>
+
+      <div class="hours">
+
+        <span>
+          Morning
+        </span>
+
+        <strong>
+          9:00 AM – 1:00 PM
+        </strong>
+
+      </div>
+
+      <div class="hours">
+
+        <span>
+          Evening
+        </span>
+
+        <strong>
+          5:00 PM – 9:00 PM
+        </strong>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRODUCTS -->
+  <section id="products">
+
+    <h2>
+      Our Products
+    </h2>
+
+    <div class="grid">
+
+
+      <div class="card">
+
+        <div class="icon">
+          🌾
+        </div>
+
+        <h3>
+          Rice & Atta
+        </h3>
+
+        <p>
+          Everyday staples for your kitchen.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="icon">
+          🫘
+        </div>
+
+        <h3>
+          Dal & Pulses
+        </h3>
+
+        <p>
+          Essential pulses for daily meals.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="icon">
+          🌶️
+        </div>
+
+        <h3>
+          Spices & Masala
+        </h3>
+
+        <p>
+          Kitchen essentials and spices.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="icon">
+          🛢️
+        </div>
+
+        <h3>
+          Oil & Dairy
+        </h3>
+
+        <p>
+          Daily cooking and dairy needs.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="icon">
+          🥤
+        </div>
+
+        <h3>
+          Snacks & Beverages
+        </h3>
+
+        <p>
+          Popular snacks and refreshments.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="icon">
+          🧴
+        </div>
+
+        <h3>
+          Personal Care
+        </h3>
+
+        <p>
+          Personal-care essentials.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="icon">
+          🏠
+        </div>
+
+        <h3>
+          Home Care
+        </h3>
+
+        <p>
+          Useful products for your home.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="icon">
+          🥬
+        </div>
+
+        <h3>
+          Fresh Vegetables
+        </h3>
+
+        <p>
+          Fresh produce for everyday cooking.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+
+    <h2>
+      About Sitaram Grocery
+    </h2>
+
+    <div class="contact-box">
+
+      <p>
+        Welcome to <strong>Sitaram Grocery</strong>.
+        We provide everyday household grocery products
+        with a focus on quality, convenience and value.
+      </p>
+
+      <br>
+
+      <p>
+        <strong>Owner:</strong>
+        Basudev Samal
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+
+    <h2>
+      Contact Us
+    </h2>
+
+    <div class="contact-box">
+
+      <p>
+        <strong>Sitaram Grocery</strong>
+      </p>
+
+      <p>
+        📍 Nagaspur Medical Bazar
+      </p>
+
+      <p>
+        📞
+        <a href="tel:7894881810">
+          7894881810
+        </a>
+      </p>
+
+      <p>
+        📧
+        <a href="mailto:mruttunjayaswainnnn@gmail.com">
+          mruttunjayaswainnnn@gmail.com
+        </a>
+      </p>
+
+
+      <div
+        class="buttons"
+        style="justify-content:center;">
+
+        <a
+          class="btn primary"
+          href="tel:7894881810">
+          📞 Call 7894881810
+        </a>
+
+        <a
+          class="btn secondary"
+          href="https://wa.me/917894881810">
+          💬 Chat on WhatsApp
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    © 2026 Sitaram Grocery
+    <br>
+    Your Daily Needs, Our Priority
+
+  </footer>
+
+
+</body>
+</html>
+<!-- PRODUCT PRICE SECTION -->
+<section id="prices">
+
+  <h2>🛒 Product & Price List</h2>
+
+  <p style="text-align:center; margin-bottom:30px;">
+    Daily grocery essentials at competitive prices
+  </p>
+
+  <div class="price-grid">
+
+    <div class="price-card">
+      <h3>🌾 Rice</h3>
+      <p>1 Kg</p>
+      <strong>₹60</strong>
+    </div>
+
+    <div class="price-card">
+      <h3>🌾 Atta</h3>
+      <p>1 Kg</p>
+      <strong>₹45</strong>
+    </div>
+
+    <div class="price-card">
+      <h3>🫘 Moong Dal</h3>
+      <p>1 Kg</p>
+      <strong>₹120</strong>
+    </div>
+
+    <div class="price-card">
+      <h3>🫘 Arhar Dal</h3>
+      <p>1 Kg</p>
+      <strong>₹150</strong>
+    </div>
+
+    <div class="price-card">
+      <h3>🫛 Chana Dal</h3>
+      <p>1 Kg</p>
+      <strong>₹90</strong>
+    </div>
+
+    <div class="price-card">
+      <h3>🌶️ Red Chilli Powder</h3>
+      <p>100 g</p>
+      <strong>₹35</strong>
+    </div>
+
+    <div class="price-card">
+      <h3>🧂 Salt</h3>
+      <p>1 Kg</p>
+      <strong>₹25</strong>
+    </div>
+
+    <div class="price-card">
+      <h3>🛢️ Cooking Oil</h3>
+      <p>1 Litre</p>
+      <strong>₹140</strong>
+    </div>
+
+    <div class="price-card">
+      <h3>🥛 Milk</h3>
+      <p>1 Litre</p>
+      <strong>₹65</strong>
+    </div>
+
+    <div class="price-card">
+      <h3>🍪 Biscuits</h3>
+      <p>Pack</p>
+      <strong>₹10</strong>
+    </div>
+
+    <div class="price-card">
+      <h3>🥤 Soft Drink</h3>
+      <p>750 ml</p>
+      <strong>₹40</strong>
+    </div>
+
+    <div class="price-card">
+      <h3>🧼 Bath Soap</h3>
+      <p>100 g</p>
+      <strong>₹35</strong>
+    </div>
+
+    <div class="price-card">
+      <h3>🧴 Shampoo</h3>
+      <p>180 ml</p>
+      <strong>₹120</strong>
+    </div>
+
+    <div class="price-card">
+      <h3>🧹 Detergent</h3>
+      <p>1 Kg</p>
+      <strong>₹80</strong>
+    </div>
+
+    <div class="price-card">
+      <h3>🥔 Potato</h3>
+      <p>1 Kg</p>
+      <strong>₹30</strong>
+    </div>
+
+    <div class="price-card">
+      <h3>🍅 Tomato</h3>
+      <p>1 Kg</p>
+      <strong>₹40</strong>
+    </div>
+
+  </div>
+
+</section>
+<style>
+
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.price-card {
+  background: white;
+  padding: 22px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  border: 1px solid #eee;
+  transition: 0.3s;
+}
+
+.price-card:hover {
+  transform: translateY(-5px);
+}
+
+.price-card h3 {
+  color: #073b9b;
+  margin-bottom: 5px;
+}
+
+.price-card p {
+  color: #666;
+  margin: 5px 0;
+}
+
+.price-card strong {
+  display: block;
+  color: #e51d2a;
+  font-size: 25px;
+  margin-top: 8px;
+}
+
+@media(max-width:800px) {
+  .price-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width:480px) {
+  .price-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>
